@@ -108,7 +108,7 @@ module SorobanRustBackend
         #   ref_vars ? Common::ReferenceAppender.call(input, ref_nums:, function_inputs: @function_inputs) : input
         # end.join(', ')
 
-        inputs
+        inputs.join(', ')
       end
     end
   end

@@ -8,7 +8,7 @@ module SorobanRustBackend
         @instruction = instruction
         @metadata = metadata
 
-        # format_assign
+        format_assign
       end
 
       def format_assign
@@ -19,7 +19,7 @@ module SorobanRustBackend
         @instruction = DTRCore::Instruction.new(
           @instruction.instruction,
           @instruction.inputs,
-          "#{var_name}:#{Common::TypeTranslator.translate_type(type_name)}",
+          "#{var_name}: #{Common::TypeTranslator.translate_type(type_name)}",
           @instruction.scope,
           @instruction.id
         )

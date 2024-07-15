@@ -10,6 +10,7 @@ module SorobanRustBackend
   autoload :InstructionHandler, 'instruction_handler'
   autoload :UserDefinedTypesHandler, 'user_defined_types_handler'
   autoload :FunctionHandler, 'function_handler'
+  autoload :ContractHandler, 'contract_handler'
 
   # This module contains all the classes that handle the different types of instructions.
   module Instruction
