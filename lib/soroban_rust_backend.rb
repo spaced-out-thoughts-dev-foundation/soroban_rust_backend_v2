@@ -33,4 +33,12 @@ module SorobanRustBackend
     autoload :Break, './lib/instruction/break'
     autoload :BinaryInstruction, './lib/instruction/binary_instruction'
   end
+
+  module UserDefinedTypes
+    autoload :Handler, './lib/user_defined_types/handler'
+  end
+
+  module Common
+    autoload :TypeTranslator, './lib/common/type_translator'
+  end
 end

@@ -9,7 +9,7 @@ RSpec.describe SorobanRustBackend::LeftChildPreferentialBinaryTree do
   ###
   context 'when single node tree' do
     it 'is sane and traverses self' do
-      node = described_class.new(1)
+      node = described_class.new(1, metadata: {})
       expect(node.value).to eq(1)
       expect(node.left_child).to be_nil
       expect(node.right_child).to be_nil
@@ -25,8 +25,8 @@ RSpec.describe SorobanRustBackend::LeftChildPreferentialBinaryTree do
   ###
   context 'when two node tree' do
     it 'returns right child since left child is nil' do
-      node1 = described_class.new(1)
-      node2 = described_class.new(2)
+      node1 = described_class.new(1, metadata: {})
+      node2 = described_class.new(2, metadata: {})
       node1.set_right_child(node2)
       expect(node1.traverse).to eq([1, 2])
     end
@@ -40,9 +40,9 @@ RSpec.describe SorobanRustBackend::LeftChildPreferentialBinaryTree do
   ###
   context 'when three node tree' do
     it 'traverses left first' do
-      node1 = described_class.new(1)
-      node2 = described_class.new(2)
-      node3 = described_class.new(3)
+      node1 = described_class.new(1, metadata: {})
+      node2 = described_class.new(2, metadata: {})
+      node3 = described_class.new(3, metadata: {})
       node1.set_left_child(node2)
       node1.set_right_child(node3)
       expect(node1.traverse).to eq([1, 2, 3])
@@ -59,11 +59,11 @@ RSpec.describe SorobanRustBackend::LeftChildPreferentialBinaryTree do
   ###
   context 'when multi-node tree' do
     it 'traverses left first' do
-      node1 = described_class.new(1)
-      node2 = described_class.new(2)
-      node3 = described_class.new(3)
-      node4 = described_class.new(4)
-      node5 = described_class.new(5)
+      node1 = described_class.new(1, metadata: {})
+      node2 = described_class.new(2, metadata: {})
+      node3 = described_class.new(3, metadata: {})
+      node4 = described_class.new(4, metadata: {})
+      node5 = described_class.new(5, metadata: {})
       node1.set_left_child(node2)
       node1.set_right_child(node3)
       node2.set_left_child(node4)

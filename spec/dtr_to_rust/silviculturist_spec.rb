@@ -284,8 +284,8 @@ RSpec.describe SorobanRustBackend::Silviculturist do
       silviculturist.make_forrest
 
       expect(silviculturist.forrest.size).to eq(1)
-      expect(silviculturist.forrest.traverse.flatten.size).to eq(6)
-      expect(silviculturist.forrest.traverse_to_ids).to eq([[0, 1, 13, 14, 15, 8]])
+      expect(silviculturist.forrest.traverse.flatten.size).to eq(5)
+      expect(silviculturist.forrest.traverse_to_ids).to eq([[0, 1, 14, 15, 8]])
     end
   end
 
@@ -324,8 +324,8 @@ RSpec.describe SorobanRustBackend::Silviculturist do
       silviculturist.make_forrest
 
       expect(silviculturist.forrest.size).to eq(2)
-      expect(silviculturist.forrest.traverse.flatten.size).to eq(11)
-      expect(silviculturist.forrest.traverse_to_ids).to eq([[3, 5, 6, 7, 9, 10, 11], [15, 17, 20, 22]])
+      expect(silviculturist.forrest.traverse.flatten.size).to eq(9)
+      expect(silviculturist.forrest.traverse_to_ids).to eq([[5, 6, 7, 9, 10, 11], [17, 20, 22]])
     end
   end
 
