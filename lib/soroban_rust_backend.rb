@@ -45,4 +45,8 @@ module SorobanRustBackend
   module NonTranslatables
     autoload :Handler, './lib/non_translatables/handler'
   end
+
+  module ContractState
+    autoload :Handler, './lib/contract_state/handler'
+  end
 end
