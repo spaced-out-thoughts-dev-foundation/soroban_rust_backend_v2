@@ -41,4 +41,8 @@ module SorobanRustBackend
   module Common
     autoload :TypeTranslator, './lib/common/type_translator'
   end
+
+  module NonTranslatables
+    autoload :Handler, './lib/non_translatables/handler'
+  end
 end
