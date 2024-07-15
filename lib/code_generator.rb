@@ -1,9 +1,10 @@
 module SorobanRustBackend
   class CodeGenerator
-    def initialize(instructions)
+    def initialize(instructions, base_indentation: 0)
       @instructions = instructions
+      @base_indentation = base_indentation
 
-      silviculturist = SorobanRustBackend::Silviculturist.new(instructions)
+      silviculturist = SorobanRustBackend::Silviculturist.new(instructions, base_indentation:)
       silviculturist.make_forrest
 
       @forrest = silviculturist.forrest
@@ -18,7 +19,7 @@ module SorobanRustBackend
 
         og_instruction = y[0]
         instruction = handle_metadata(y[0], y[2])
-        indentation = og_instruction.instruction == 'goto' ? y[2][:return_scope] : y[1]
+        indentation = og_instruction.instruction == 'goto' ? y[2][:return_scope] + @base_indentation : y[1]
 
         return_string << "#{'    ' * indentation}#{InstructionHandler.new(instruction, y[2]).generate_rust}\n"
       end

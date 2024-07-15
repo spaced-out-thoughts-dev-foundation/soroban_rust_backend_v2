@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe SorobanRustBackend::UserDefinedTypes::Handler do
+RSpec.describe SorobanRustBackend::UserDefinedTypesHandler do
   describe '.generate' do
     context 'when struct' do
       let(:user_defined_type) do

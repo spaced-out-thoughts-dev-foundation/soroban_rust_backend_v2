@@ -4,10 +4,11 @@ module SorobanRustBackend
   class Silviculturist
     attr_accessor :forrest
 
-    def initialize(instructions)
+    def initialize(instructions, base_indentation: 0)
       @instructions = instructions
       @forrest = LCPBT_Forrest.new
       @seen_instructions = {}
+      @base_indentation = base_indentation
     end
 
     def make_forrest
@@ -16,7 +17,7 @@ module SorobanRustBackend
         instructions = @instructions[index..]
         scope = 0
         tree = plant_trees(scope, instructions, metadata: { last_node_was_conditional_jump: false, parent_scope: nil, symbol_table: {} },
-                                                indentation: 0)
+                                                indentation: @base_indentation)
         @forrest.add_tree(tree)
 
         seen = true

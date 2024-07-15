@@ -1,6 +1,6 @@
 module SorobanRustBackend
   module NonTranslatables
-    class Handler(non_translatables)
+    class Handler
       def initialize(non_translatables)
         @non_translatables = non_translatables
       end

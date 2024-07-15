@@ -8,6 +8,8 @@ module SorobanRustBackend
   autoload :CodeGenerator, 'code_generator'
   autoload :Condenser, 'condenser'
   autoload :InstructionHandler, 'instruction_handler'
+  autoload :UserDefinedTypesHandler, 'user_defined_types_handler'
+  autoload :FunctionHandler, 'function_handler'
 
   # This module contains all the classes that handle the different types of instructions.
   module Instruction
@@ -32,10 +34,6 @@ module SorobanRustBackend
     autoload :TryAssign, './lib/instruction/try_assign'
     autoload :Break, './lib/instruction/break'
     autoload :BinaryInstruction, './lib/instruction/binary_instruction'
-  end
-
-  module UserDefinedTypes
-    autoload :Handler, './lib/user_defined_types/handler'
   end
 
   module Common
